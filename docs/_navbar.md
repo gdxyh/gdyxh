@@ -2,16 +2,12 @@
 
 * [主页](/)
 
+* 链接
+
+  * [哔哩](https://space.bilibili.com/666635841)
+  * [GitHub](https://github.com/gdxyh)
+
 * 其它
 
-  * [Quick start](quickstart.md)
-  * [Writing more pages](more-pages.md)
-  * [Custom navbar](custom-navbar.md)
-  * [Cover page](cover.md)
-
-* 个人
-  * [Configuration](configuration.md)
-  * [Themes](themes.md)
-  * [Using plugins](plugins.md)
-  * [Markdown configuration](markdown.md)
-  * [Language highlight](language-highlight.md)
+  * [404](_404.md)
+  * [Shell Help](shell-help.md)
