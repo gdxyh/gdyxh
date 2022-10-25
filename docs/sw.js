@@ -80,4 +80,3 @@ self.addEventListener('fetch', event => {
         .catch(_ => { /* eat any errors */ })
     )
   }
-})
