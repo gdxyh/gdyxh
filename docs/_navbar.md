@@ -10,5 +10,6 @@
 
 * 其它
 
-  * [Shell Help](shell-help.md)
+  * [Nilesoft Shell](nilesoftshell/README.md)
+  * [Nilesoft Shell Help](nilesoftshell/shell-help.md)
   * [404](_404.md)

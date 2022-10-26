@@ -5,3 +5,5 @@
 链接
 - [哔哩哔哩](https://space.bilibili.com/666635841)
 - [Github](https://github.com/gdxyh)
+
+<big>[Nilesoft Shell](nilesoftshell/README.md)</big>
