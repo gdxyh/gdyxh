@@ -1,0 +1,48 @@
+﻿'use strict';
+
+$(document).ready(function() {
+	// Check for click events on the navbar burger icon
+	$('.navbar-burger').click(function() {
+		// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+		$(this).toggleClass('is-active');
+		$('.navbar-menu').toggleClass('is-active');
+	});
+  
+	// lightbox
+	$('.lightbox').click(function(link) {
+		link.preventDefault();
+		
+		var lightbox = $(this);
+		
+		if(!lightbox.is('a') && !lightbox.hasClass('lightbox'))
+			return 'Clicked item is not a link with class .lightbox';
+
+		var modal = $('<div class="modal is-active"></div>');
+		var modal_background = $('<div class="modal-background modal-background-white"></div>');
+		var modal_image = $('<img class="modal-content-image" src="">');
+
+		modal_image.attr('src',lightbox.children('img').attr('src'));
+
+		modal.append(modal_background);
+		modal.append(modal_image);
+		$('body').append(modal);
+
+		var root = $(document.documentElement);
+		root.addClass('is-clipped');
+		
+		$(modal).on('click',function(){
+			root.removeClass('is-clipped');
+			modal.removeClass("is-active");
+		});
+		
+		document.addEventListener('keydown', function (event) {
+			var e = event || window.event;
+			if (e.keyCode === 27) {
+				root.removeClass('is-clipped');
+				modal.removeClass("is-active");
+			}
+		});
+	});
+	
+	//$(".adsbygoogle").each(function () { (adsbygoogle = window.adsbygoogle || []).push({}); });
+});

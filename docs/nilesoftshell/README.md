@@ -6,4 +6,6 @@
 
 [官网](https://www.nilesoft.org)
 
-[英文帮助文件](nilesoftshell/shell-help.md)
+[官网汉化-未完成](nilesoftshell/web/首页 - Shell.html)
+
+[英文帮助文件-未完成](nilesoftshell/shell-help.md)
