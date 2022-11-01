@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
   <!--link rel="stylesheet" href="vue.css"-->
+  <!-- 主题颜色 -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/buble.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dark.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/pure.css"> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/dolphin.css"> -->
+  <!-- 主题颜色 -->
+  <!-- 下面是暗色模式 -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/style.min.css" /> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.css" />
+  <style>
+    .tab-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(35%, -45%);
+      padding: 0.25em 0.35em;
+      border-radius: 3px;
+      background: red;
+      color: white;
+      font-family: sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+    }
+  </style>
+  <style>
+    :root {
+      /* --docsifytabs-border-color: #ededed; */
+      /* --docsifytabs-tab-highlight-color: rgb(0, 85, 255); */
+    }
+  </style>
 </head>
-<body>
+
+<body class="close">
+  <!-- <body> -->
   <div id="app"></div>
   <script>
     window.$docsify = {
@@ -17,20 +51,136 @@
       //loadNavbar: 'nav.md', //从 Markdown 文件加载导航栏
       //onlyCover: true, //只有封面
       notFoundPage: true, //404页面
-      hideSidebar: true, //隐藏侧边栏
+      // hideSidebar: true, //隐藏侧边栏
       //mergeNavbar: true, //
       themeColor: '#000000', //主题颜色
+      auto2top: true,
+      // externalLinkTarget: '_self', // default: '_blank' 外部链接的打开方式。默认为 _blank （在新窗口或者标签页中打开）
+      // themeColor: 'rgb(0, 85, 255)',
       //repo: 'https://github.com/gdxyh', //右上角显示github链接
+      // externalLinkTarget: '_self',//右上角链接的打开方式。默认为 （在新窗口或者标签页中打开）_blank
+      ext: '.md',//资源的文件扩展名。
+      // 下面是文档分页
+      pagination: {
+        previousText: '上一页',
+        nextText: '下一页',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      //幻灯片
+
+      //选项卡
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic', //'classic'//'material'//false
+        // theme: 'material', //'classic'//'material'//false
+        tabComments: true,
+        tabHeadings: true
+      },
+      footer: {
+        copy: '<span>孤独行永恒 &copy; 2022</span>',
+        auth: '    Powered by 解亦成',
+        pre: '<hr/>',
+        style: 'text-align: right;',
+        class: 'className',
+      },
+      timeUpdater: {
+        text: "最后更新时间: {docsify-updated}",
+        formatUpdated: "{YYYY}/{MM}/{DD} {HH}:{mm}:{ss}.{fff}",
+        whereToPlace: "bottom",  // "top" or "bottom", default to "bottom"
+      },
+      // dark: {
+      //   background: "#1e1e1e",
+      //   toggleBtnBg: "#cccccc",
+      //   textColor: "#cccccc"
+      // },
+      // light: {
+      //   background: "white",
+      //   toggleBtnBg: "var(--theme-color)",
+      //   textColor: "var(--theme-color)"
+      // },
+      customPageTitle: {
+        prefix: 'Docsify',
+        suffix: 'v1.0.0',
+        seprator: '|',
+        debug: false,
+      },
+      chat: {
+        // chat panel title
+        title: '',
+        // set avatar url
+        users: [
+          { nickname: '404', avatar: '' },
+          { nickname: '孤独行永恒', avatar: '' },
+        ],
+        myself: '孤独行永恒',
+        animation: 0,
+      },
+      // progress: {
+      //   position: "top",
+      //   color: "var(--theme-color,#42b983)",
+      //   height: "3px",
+      // },
     };
   </script>
   <!--script>
     if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('sw.js')
+      navigator.serviceWorker.register('js/sw.js')
     }
   </script-->
-  <!--script src="docsify.min.js">
+  <!-- script src="js/docsify.min.js"-->
   </script-->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script> -->
+  <script src="js/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script> -->
+  <!-- docsify (latest v4.x.x)-->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script> -->
+  <!-- docsify-tabs (latest v1.x.x) -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script><
+  <!-- PDFObject.js is a required dependency of this plugin -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+  <!-- This is the source code of the pdf embed plugin -->
+  <!-- <script src="path-to-file/docsify-pdf-embed.js"></script> -->
+  <!-- or use this if you are not hosting the file yourself -->
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+  <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
+  <!-- 下面是文档分页 -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 下面是暗色模式 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/index.min.js"></script> -->
+  <!-- 下面是文档幻灯片 -->
+  <script src="//unpkg.com/docsify-slides/dist/docsify-slides.min.js"></script>
+  <!-- 下面是页面标题 -->
+  <script src="//cdn.jsdelivr.net/npm/@sujaykumarh/docsify-plugin-title@1.x/dist/plugin.min.js"></script>
+  <!-- LaTeX display engine script Here -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script> -->
+  <!-- 翻页 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify-pagination-keyboard-helper@latest/dist/bundle.js"></script> -->
+  <script src="js/bundle.js"></script>
+  <!-- Docsify Chat聊天界面 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-chat/lib/docsify-chat.min.js"></script>
+  <!-- 内联图像 -->
+  <script src="https://unpkg.com/@h-hg/docsify-image-caption/dist/docsify-image-caption.min.js"></script>
+  <!-- 可让您在 docsify 中嵌入 swimlanes.io 序列图 https://github.com/drhoffmann/docsify-swimlanes-io -->
+  <script src="//unpkg.com/docsify-swimlanes-io@latest/dist/docsify-swimlanes-io.js"></script>
+  <!-- // import vega  https://jercarre.github.io/vega_docsify/#/?id=configure-indexhtml -->
+  <script src="//cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="//cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="//cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="//cdn.jsdelivr.net/gh/jerCarre/vega_docsify@v1.1/lib/docsivega.js"></script>
+  <!-- 一个文档化插件，用于渲染nomnoml代码围栏。 https://mylesj.github.io/docsify-nomnoml/#/ -->
+  <script src="//cdn.jsdelivr.net/npm/graphre@0.1/dist/graphre.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/nomnoml@1.4/dist/nomnoml.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-nomnoml@1/dist/plugin.min.js"></script>
+  <!-- JacobWeinbren https://github.com/JacobWeinbren/docsify-demo -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.js"></script>
+  <!-- docsify之阅读进度条插件 docsify 的进度条插件 https://github.com/HerbertHe/docsify-progress -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
 </body>
+
 </html>

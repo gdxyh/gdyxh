@@ -8,4 +8,12 @@
 
 [官网汉化-未完成](nilesoftshell/web/首页 - Shell.html)
 
+<!-- slide:break-50 -->
+
+#
+
+<br>
+
 [英文帮助文件-未完成](nilesoftshell/shell-help.md)
+
+[嵌入式图形字库](nilesoftshell/pdf.md)
