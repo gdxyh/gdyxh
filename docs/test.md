@@ -24,8 +24,41 @@ B --> A: Pong
 
 [Vega官方文档](https://github.com/vega/vega-embed#options)
 
+[Readme](https://jercarre.github.io/vega_docsify)
+
 ```vega
-bar-chart.vg.json
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://vega.github.io/vega-lite/data/us-10m.json",
+    "format": {
+      "type": "topojson",
+      "feature": "counties"
+    }
+  },
+  "transform": [{
+    "lookup": "id",
+    "from": {
+      "data": {
+        "url": "https://vega.github.io/vega-lite/data/unemployment.tsv"
+      },
+      "key": "id",
+      "fields": ["rate"]
+    }
+  }],
+  "projection": {
+    "type": "albersUsa"
+  },
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "rate",
+      "type": "quantitative"
+    }
+  }
+}
 ```
 
 ### nomnoml renderSvg
@@ -51,6 +84,60 @@ bar-chart.vg.json
 ```html preview
 <p>Hello, World.</p>
 ```
+
+
+### 测试支持codeblock-iframe语法 Test for codeblock-iframe syntax supporting in docsify
+
+```iframe
+height="600"
+width="100%"
+scrolling="no"
+title="Zdog trefoil"
+src="https://codepen.io/desandro/embed/XWNWPve?height=265&theme-id=light&default-tab=js,result"
+frameborder="no"
+loading="lazy"
+allowtransparency="true"
+allowfullscreen="true"
+textContent="See the Pen <a href='https://codepen.io/desandro/pen/XWNWPve'>Zdog trefoil</a> by Dave DeSandro (<a href='https://codepen.io/desandro'>@desandro</a>) on <a href='https://codepen.io'>CodePen</a>."
+```
+
+<!-- ```iframe
+height="600"
+width="100%"
+scrolling="no"
+title="Zdog trefoil"
+src="https://codepen.io/desandro/embed/XWNWPve?height=265&theme-id=light&default-tab=js,result"
+frameborder="no"
+loading="lazy"
+allowtransparency="true"
+allowfullscreen="true"
+textContent="See the Pen <a href='https://codepen.io/desandro/pen/XWNWPve'>Zdog trefoil</a> by Dave DeSandro (<a href='https://codepen.io/desandro'>@desandro</a>) on <a href='https://codepen.io'>CodePen</a>."
+``` -->
+
+[filename](https://cdn.jsdelivr.net/npm/docsify-drawio/test.drawio ':include :type=code')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- slide:break -->
 
@@ -176,3 +263,4 @@ order: first [,second[,third ...]]
 // Uncomment next line for re-ordering
 // order: Three, Two
 </swimlanes-io>
+
